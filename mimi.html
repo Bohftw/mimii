@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love ❤️</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #ffe6f2;
+            transition: background 1s ease-in-out;
+        }
+
+        .container {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #start-btn {
+            background-color: #ff6699;
+            color: white;
+        }
+
+        #yes-btn {
+            background-color: #66cc99;
+            color: white;
+        }
+
+        #no-btn {
+            background-color: #ff4d4d;
+            color: white;
+            position: absolute;
+        }
+
+        /* Love Letter Styles */
+        #love-message {
+            font-size: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        /* Cute Cat Images */
+        .cat-img {
+            width: 150px;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page 1: Greeting -->
+    <div id="page1" class="container" style="display: block; opacity: 1;">
+        <h1>Hello, My Princess! 👑💕</h1>
+        <p>Welcome to your special little page!</p>
+        <br>
+        <button id="start-btn">Let's Get Started!</button>
+    </div>
+
+    <!-- Page 2: Do You Love Me? -->
+    <div id="page2" class="container">
+        <h1>Do you love me? 😘💕</h1>
+        <button id="yes-btn">Yes</button>
+        <button id="no-btn">No</button>
+    </div>
+
+    <!-- Page 3: Love Message -->
+    <div id="page3" class="container">
+        <h1>Yaaay! 💖</h1>
+        <div id="love-message">
+            <p>since u answered yes cause u have to or i will literally kill u i want to say that <br>
+            u might be afraid from seeing the version u hated from me but i promise (and this time i will keep my promise)<br>
+        that u will never see him again ill try my best to show u the love and the care u deserve ur adorable<br>
+    ur smart u have a cute smile a pure soul idk what i was thinking when i was talking to myself saying tw yji wakt nahkiw fih<br>
+    until i lost everything... kol hja behya fik <br>
+    this time is smth else i will keep u i will take care of u and love u more than u think hope u believe me khw <br>
+    i still dont know u well but if u cried after seeing this just keep it and cry between my hands u know i love it :><br>
+    so since 5alitli ken darjin i cant say more nhbek barcha w i will always love u  </p>
+        </div>
+    </div>
+
+    <script>
+        // Page Transition Function
+        function showPage(pageId) {
+            document.querySelectorAll('.container').forEach(page => {
+                page.style.opacity = '0';
+                setTimeout(() => { page.style.display = 'none'; }, 500);
+            });
+
+            setTimeout(() => {
+                document.getElementById(pageId).style.display = 'block';
+                setTimeout(() => { document.getElementById(pageId).style.opacity = '1'; }, 100);
+            }, 500);
+        }
+
+        // Move from Greeting Page to Question Page
+        document.getElementById("start-btn").addEventListener("click", function() {
+            showPage("page2");
+        });
+
+        // Trick No Button
+        document.getElementById("no-btn").addEventListener("mouseover", function() {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 100);
+            this.style.left = `${x}px`;
+            this.style.top = `${y}px`;
+        });
+
+        // Move to Love Message Page
+        document.getElementById("yes-btn").addEventListener("click", function() {
+            showPage("page3");
+        });
+    </script>
+
+</body>
+</html>
